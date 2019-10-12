@@ -1,10 +1,11 @@
-package com.example.spring.boot.service.impl;
+package br.com.middleware.service;
 
-import com.example.spring.boot.dao.BlogRepository;
-import com.example.spring.boot.dao.entity.Blog;
-import com.example.spring.boot.service.BlogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import br.com.middleware.entity.Blog;
+import br.com.middleware.entity.VirtualMachine;
+import br.com.middleware.repository.BlogRepository;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -12,16 +13,16 @@ import reactor.core.publisher.Mono;
 public class BlogServiceImpl implements BlogService {
 
     @Autowired
-    private BlogRepository blogRepository;
+    private BlogRepository repository;
 
     @Override
     public Mono<Blog> createBlog(Blog blog) {
-        return blogRepository.insert(blog);
+        return repository.insert(blog);
     }
 
     @Override
     public Flux<Blog> findAll() {
-        return blogRepository.findAll();
+        return repository.findAll();
     }
 
     @Override
@@ -30,19 +31,19 @@ public class BlogServiceImpl implements BlogService {
             findBlog.setContent(blog.getContent());
             findBlog.setTitle(blog.getTitle());
             findBlog.setAuthor(blog.getAuthor());
-            blogRepository.save(findBlog).subscribe();
+            repository.save(findBlog).subscribe();
         });
     }
 
     @Override
     public Mono<Blog> findOne(String id) {
-        return blogRepository.findByIdAndDeleteIsFalse(id).
+        return repository.findByIdAndDeleteIsFalse(id).
                 switchIfEmpty(Mono.error(new Exception("No Blog found with Id: " + id)));
     }
 
     @Override
     public Flux<Blog> findByTitle(String title) {
-        return blogRepository.findByAuthorAndDeleteIsFalse(title)
+        return repository.findByAuthorAndDeleteIsFalse(title)
                 .switchIfEmpty(Mono.error(new Exception("No Blog found with title Containing : " + title)));
     }
 
@@ -50,7 +51,7 @@ public class BlogServiceImpl implements BlogService {
     public Mono<Boolean> delete(String id) {
         return findOne(id).doOnSuccess(blog -> {
             blog.setDelete(true);
-            blogRepository.save(blog).subscribe();
+            repository.save(blog).subscribe();
         }).flatMap(blog -> Mono.just(Boolean.TRUE));
     }
 }

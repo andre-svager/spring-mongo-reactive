@@ -1,4 +1,4 @@
-package com.example.spring.boot.dao.entity.common;
+package br.com.middleware.entity;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -11,7 +11,9 @@ import java.util.Date;
 @Getter
 public abstract class BaseEntity implements Serializable {
 
-    @Id
+	private static final long serialVersionUID = 1L;
+
+	@Id
     private String id;
 
     @CreatedBy

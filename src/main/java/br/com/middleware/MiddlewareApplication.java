@@ -1,4 +1,4 @@
-package com.example.spring.boot;
+package br.com.middleware;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,9 +8,9 @@ import org.springframework.data.mongodb.repository.config.EnableReactiveMongoRep
 @EnableMongoAuditing
 @EnableReactiveMongoRepositories
 @SpringBootApplication
-public class SprignBootLearingApplication {
+public class MiddlewareApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SprignBootLearingApplication.class, args);
+		SpringApplication.run(MiddlewareApplication.class, args);
 	}
 }

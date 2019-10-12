@@ -1,9 +1,9 @@
-package com.example.spring.boot.dao;
+package br.com.middleware.repository;
 
-import com.example.spring.boot.dao.entity.Blog;
-import com.mongodb.Mongo;
 import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 import org.springframework.stereotype.Repository;
+
+import br.com.middleware.entity.Blog;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 

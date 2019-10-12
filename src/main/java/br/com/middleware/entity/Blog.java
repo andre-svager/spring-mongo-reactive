@@ -1,6 +1,5 @@
-package com.example.spring.boot.dao.entity;
+package br.com.middleware.entity;
 
-import com.example.spring.boot.dao.entity.common.BaseEntity;
 import lombok.Data;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.index.TextIndexed;

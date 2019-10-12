@@ -1,6 +1,7 @@
-package com.example.spring.boot.service;
+package br.com.middleware.service;
 
-import com.example.spring.boot.dao.entity.Blog;
+import br.com.middleware.entity.Blog;
+import br.com.middleware.entity.VirtualMachine;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 

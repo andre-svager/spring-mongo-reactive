@@ -3,19 +3,19 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.example.spring.boot</groupId>
-	<artifactId>sprign-boot-learing</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<groupId>br.com.middleware</groupId>
+	<artifactId>middleware</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>sprign-boot-learing</name>
-	<description>Learning Spring boot 2</description>
+	<name>middleware</name>
+	<description>Middleware</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.0.0.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath/>
 	</parent>
 
 	<properties>
@@ -34,7 +34,6 @@
 			<artifactId>spring-boot-starter-webflux</artifactId>
 		</dependency>
 
-		<!--Swagger -->
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger2</artifactId>
@@ -76,6 +75,5 @@
 			</plugin>
 		</plugins>
 	</build>
-
-
+	
 </project>

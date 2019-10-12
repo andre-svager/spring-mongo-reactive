@@ -1,6 +1,6 @@
-# About this repo
+# Spring Reactive with MongoDB 
 
-
-This is the codebase of the Learn Spring Boot 2 course. 
+Project with Reactive Spring and assynchronous MongoDB. 
+Depends on MongoDB container, built with docker-compose, in source folder 
 
 
