@@ -10,7 +10,7 @@ services:
       ME_CONFIG_BASICAUTH_PASSWORD: admin
       ME_CONFIG_MONGODB_PORT: 27017
       #ME_CONFIG_MONGODB_ADMINUSERNAME: root
-      #ME_CONFIG_MONGODB_ADMINPASSWORD: redhat99
+      #ME_CONFIG_MONGODB_ADMINPASSWORD: root
     links:
       - mongo
     networks:
